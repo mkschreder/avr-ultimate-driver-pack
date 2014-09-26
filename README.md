@@ -23,3 +23,7 @@ Contributors:
 * Martin K. Schröder
 	info@fortmax.se
 	http://oskit.se
+
+Usage:
+
+Many of the driver header files are pretty much self explanatory. You first init the device, then communicate with it. Then debug if it doesn't work :) If it doesn't work, it could be that you have connected your device to wrong pins that are not configured in the driver. But once you get your hardware wired correctly, the drivers should work fine. 
