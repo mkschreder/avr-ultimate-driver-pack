@@ -17,10 +17,10 @@ file(GLOB Project_SOURCES drivers/*.c)
 #file(GLOB Project_SOURCES test/hello.c)
 file(GLOB Project_HEADER drivers/*.h)
 
-set (CMAKE_C_COMPILER "/usr/bin/avr-gcc") 
+set (CMAKE_C_COMPILER "avr-gcc") 
 set (CMAKE_C_FLAGS "-ffunction-sections -std=c99 -fdata-sections -O2 -Wl,--relax,--gc-sections -DF_CPU=${CPU_FREQ} -mmcu=${CPU}")
 
-set (CMAKE_CXX_COMPILER "/usr/bin/avr-g++") 
+set (CMAKE_CXX_COMPILER "avr-g++") 
 set (CMAKE_CXX_FLAGS "-ffunction-sections -fpermissive -fdata-sections -std=c++11 -O2 -Wl,--relax,--gc-sections -DF_CPU=${CPU_FREQ} -mmcu=${CPU}")
 
 #set (CMAKE_C_COMPILER "/usr/bin/avr-gcc") 
