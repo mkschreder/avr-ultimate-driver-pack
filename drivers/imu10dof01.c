@@ -16,10 +16,10 @@ Please refer to LICENSE file for licensing information.
 
 #include "imu10dof01.h"
 
-#include "../adxl345/adxl345.h"
-#include "../l3g4200d/l3g4200d.h"
-#include "../hmc5883l/hmc5883l.h"
-#include "../bmp085/bmp085.h"
+#include "adxl345.h"
+#include "l3g4200d.h"
+#include "hmc5883l.h"
+#include "bmp085.h"
 
 //path to i2c fleury lib
 #include IMU10DOF01_I2CFLEURYPATH

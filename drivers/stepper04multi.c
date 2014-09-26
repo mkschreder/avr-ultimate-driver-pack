@@ -13,7 +13,7 @@ Please refer to LICENSE file for licensing information.
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
-#include "../l74hc595/l74hc595.h"
+#include "l74hc595.h"
 
 #include "stepper04multi.h"
 
@@ -89,8 +89,8 @@ void stepper04multi_init() {
 	stepper04multi_setup();
 
 	//set timer0
-	TCCR0 = TIMER0_PRESCALER;
-	TIMSK = 1<<TOIE0; // enable timer interrupt
+	TCCR0B = TIMER0_PRESCALER;
+	TIMSK0 = 1<<TOIE0; // enable timer interrupt
 
 	//init interrupt
 	sei();

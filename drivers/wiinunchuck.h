@@ -25,7 +25,7 @@ Please refer to LICENSE file for licensing information.
 
 //i2c settings
 #define WIINUNCHUCK_I2CINIT 1 //enable or disable i2c init
-#define WIINUNCHUCK_I2CFLEURYPATH "../i2chw/i2cmaster.h" //define the path to i2c fleury lib
+#define WIINUNCHUCK_I2CFLEURYPATH "i2cmaster.h" //define the path to i2c fleury lib
 
 //get non calibrated values, use this function to calibrate the device
 #define WIINUNCHUCK_GETNONCALIBRATED 0

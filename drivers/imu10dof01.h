@@ -24,7 +24,7 @@ References:
 #define IMU10DOF01_H_
 
 //i2c settings
-#define IMU10DOF01_I2CFLEURYPATH "../i2chw/i2cmaster.h" //define the path to i2c fleury lib
+#define IMU10DOF01_I2CFLEURYPATH "i2cmaster.h" //define the path to i2c fleury lib
 #define IMU10DOF01_I2CINIT 1 //init i2c
 
 //setup timer0 overflow event and define madgwickAHRSsampleFreq equal to timer0 frequency

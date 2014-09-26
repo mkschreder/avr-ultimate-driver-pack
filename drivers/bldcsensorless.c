@@ -171,7 +171,7 @@ void bldcsensorless_init() {
 	TCCR1A = (1 << WGM11); //fast pwm mode
 	TCCR1B = (1 << WGM13) | (1 << WGM12);
 	TCCR1B |= TIMER1_PRESCALER; //prescaler
-	TIMSK |= (1<<TOIE1); //enable timer1
+	TIMSK1 |= (1<<TOIE1); //enable timer1
 
 	//sound start
 	#if BLDCSENSORLESS_STARTUPSOUND == 1

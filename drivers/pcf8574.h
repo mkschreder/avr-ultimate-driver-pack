@@ -17,7 +17,7 @@ Please refer to LICENSE file for licensing information.
 #define PCF8574_MAXPINS 8 //max pin per device
 
 //settings
-#define PCF8574_I2CFLEURYPATH "../i2chw/i2cmaster.h" //define the path to i2c fleury lib
+#define PCF8574_I2CFLEURYPATH "i2cmaster.h" //define the path to i2c fleury lib
 
 //pin status
 volatile uint8_t pcf8574_pinstatus[PCF8574_MAXDEVICES];

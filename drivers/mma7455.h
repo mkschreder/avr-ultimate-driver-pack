@@ -20,7 +20,7 @@ Please refer to LICENSE file for licensing information.
 #define MMA7455_RANGE8G 0x01 //sensitivity to 8g and measurement mode
 
 //i2c settings
-#define MMA7455_I2CFLEURYPATH "../i2chw/i2cmaster.h" //define the path to i2c fleury lib
+#define MMA7455_I2CFLEURYPATH "i2cmaster.h" //define the path to i2c fleury lib
 #define MMA7455_I2CINIT 1 //init i2c
 
 //settings

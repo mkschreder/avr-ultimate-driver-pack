@@ -51,8 +51,8 @@ void dcmotorpwmsoft_init() {
 	}
 
 	//init timer 0
-	TCCR0 = TIMER0_PRESCALER;
-	TIMSK = 1<<TOIE0; // enable timer interrupt
+	TCCR0B = TIMER0_PRESCALER;
+	TIMSK0 = 1<<TOIE0; // enable timer interrupt
 
 	sei();
 }

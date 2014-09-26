@@ -15,7 +15,7 @@ Please refer to LICENSE file for licensing information.
 #define BH1750_ADDR (0x23<<1) //device address
 
 //i2c settings
-#define BH1750_I2CFLEURYPATH "../i2chw/i2cmaster.h" //define the path to i2c fleury lib
+#define BH1750_I2CFLEURYPATH "i2cmaster.h" //define the path to i2c fleury lib
 #define BH1750_I2CINIT 1 //init i2c
 
 //resolution modes

@@ -30,11 +30,11 @@ References:
 	ISR(TIMER1_OVF_vect)
 //a timer stop function
 #define TIMER_STOP \
-	TIMSK = 0; \
+	TIMSK1 = 0; \
 	TCCR1B = 0;
 //a timer start function
 #define TIMER_START \
-	TIMSK = (1 << TOIE1); \
+	TIMSK1 = (1 << TOIE1); \
 	TCCR1B = (1 << CS12) | (1 << CS11) | (1 << CS10); /*External clock source on T1 pin. Clock on rising edge*/
 //the timer count register (that measure how many times the timer has run)
 #define TIMER_COUNTREGISTER \

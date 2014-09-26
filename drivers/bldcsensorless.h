@@ -110,7 +110,7 @@ Please refer to LICENSE file for licensing information.
 #define BLDCSENSORLESS_ZCTHRESHOLD 150
 
 //adc definitions
-#define BLDCSENSORLESS_ADCINCLUDE "../adc/adc.h" //include file
+#define BLDCSENSORLESS_ADCINCLUDE "adc.h" //include file
 #define BLDCSENSORLESS_ADCSETCHANNEL(x) adc_setchannel(x) //set channel to read
 #define BLDCSENSORLESS_ADCREADSEL adc_readsel() //read adc selected channel
 

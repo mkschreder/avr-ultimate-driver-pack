@@ -51,8 +51,8 @@ ISR(TIMER0_OVF_vect) {
  */
 void fs300a_init() {
 	//set timer0
-	TCCR0 = TIMER0_PRESCALER;
-	TIMSK = 1<<TOIE0; // enable timer interrupt
+	TCCR0B = TIMER0_PRESCALER;
+	TIMSK0 = 1<<TOIE0; // enable timer interrupt
 	//input
 	FS300A_DDR &= ~(1 << FS300A_INPUT1);
 }

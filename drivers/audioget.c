@@ -17,7 +17,7 @@ Please refer to LICENSE file for licensing information.
 
 #include "audioget.h"
 
-#include "../adc/adc.h"
+#include "adc.h"
 
 
 #if AUDIOGET_USETIMER == 1
