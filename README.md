@@ -9,12 +9,17 @@ I have not tested ALL of the drivers, but I have used many of them. Some drivers
 One improvement that can be done is interrupt support for all the drivers.
 
 New drivers:
-	avrbus.c - driver for my custom SPI with addressing support
-	time.c - timer driver that runs timer1 at clock speed and can calculate exact delays and timeouts. 
+
+	- avrbus.c - driver for my custom SPI with addressing support
+	
+	- time.c - timer driver that runs timer1 at clock speed and can calculate exact delays and timeouts.
+	
 
 Contributors:
+
 	- Big thanks to Davide Geroni for writing most of the drivers in this pack.
 		http://davidegironi.blogspot.se/
+		
 	- Martin K. Schröder
 		info@fortmax.se
 		http://oskit.se
