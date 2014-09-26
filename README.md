@@ -4,6 +4,8 @@ All drivers are in C and can be compiled into a driver lib using:
 
 	cmake . && make
 
+NOTE: if you don't have cmake, you don't need it. Just add the files you need to your own project makefile and compile them in as is. 
+
 I have not tested ALL of the drivers, but I have used many of them. Some drivers may need configuration on your part. But all the code is there to study and improve.
 
 One improvement that can be done is interrupt support for all the drivers.
