@@ -1,0 +1,98 @@
+// Microchip ENC28J60 Ethernet Interface Driver
+// Author: Pascal Stang
+// Modified by: Guido Socher
+// Copyright: GPL V2
+//
+// This driver provides initialization and transmit/receive
+// functions for the Microchip ENC28J60 10Mb Ethernet Controller and PHY.
+// This chip is novel in that it is a full MAC+PHY interface all in a 28-pin
+// chip, using an SPI interface to the host processor.
+//
+// 2010-05-20 <jc@wippler.nl>
+
+#ifndef ENC28J60_H
+#define ENC28J60_H
+
+/** This class provide low-level interfacing with the ENC28J60 network interface. This is used by the EtherCard class and not intended for use by (normal) end users. */
+struct enc28j60 {
+    uint8_t *buffer; //!< Data buffer (shared by recieve and transmit)
+    uint16_t bufferSize; //!< Size of data buffer
+    uint8_t broadcast_enabled; //!< True if broadcasts enabled (used to allow temporary disable of broadcast for DHCP or other internal functions)
+}; 
+
+/**   @brief  Initialise network interface
+*     @param  size Size of data buffer
+*     @param  macaddr Pointer to 6 byte hardware (MAC) address
+*     @param  csPin Arduino pin used for chip select (enable network interface SPI bus). Default = 8
+*     @return <i>uint8_t</i> ENC28J60 firmware version or zero on failure.
+*/
+uint8_t enc28j60_init (struct enc28j60 *eth, const uint16_t size, const uint8_t* macaddr,
+													 uint8_t csPin);
+
+/**   @brief  Check if network link is connected
+*     @return <i>bool</i> True if link is up
+*/
+uint8_t enc28j60_isUp (struct enc28j60 *eth);
+
+/**   @brief  Sends data to network interface
+*     @param  len Size of data to send
+*     @note   Data buffer is shared by recieve and transmit functions
+*/
+void enc28j60_send(struct enc28j60 *eth, uint16_t len);
+
+/**   @brief  Copy recieved packets to data buffer
+*     @return <i>uint16_t</i> Size of recieved data
+*     @note   Data buffer is shared by recieve and transmit functions
+*/
+uint16_t enc28j60_recv(struct enc28j60 *eth);
+
+/**   @brief  Copy data from ENC28J60 memory
+*     @param  page Data page of memory
+*     @param  data Pointer to buffer to copy data to
+*/
+void enc28j60_copyout (struct enc28j60 *eth, uint8_t page, const uint8_t* data);
+
+/**   @brief  Copy data to ENC28J60 memory
+*     @param  page Data page of memory
+*     @param  data Pointer to buffer to copy data from
+*/
+void enc28j60_copyin (struct enc28j60 *eth, uint8_t page, uint8_t* data);
+
+/**   @brief  Get single byte of data from ENC28J60 memory
+*     @param  page Data page of memory
+*     @param  off Offset of data within page
+*     @return Data value
+*/
+uint8_t enc28j60_peekin (struct enc28j60 *eth, uint8_t page, uint8_t off);
+
+/**   @brief  Put ENC28J60 in sleep mode
+*/
+void enc28j60_powerDown(struct enc28j60 *eth);  // contrib by Alex M.
+
+/**   @brief  Wake ENC28J60 from sleep mode
+*/
+void enc28j60_powerUp(struct enc28j60 *eth);    // contrib by Alex M.
+
+/**   @brief  Enable reception of broadcast messages
+*     @param  temporary Set true to temporarily enable broadcast
+*     @note   This will increase load on recieved data handling
+*/
+void enc28j60_enableBroadcast(struct enc28j60 *eth, uint8_t temporary);
+
+/**   @brief  Disable reception of broadcast messages
+*     @param  temporary Set true to only disable if temporarily enabled
+*     @note   This will reduce load on recieved data handling
+*/
+void enc28j60_disableBroadcast(struct enc28j60 *eth, uint8_t temporary);
+
+/**   @brief  Enables reception of mulitcast messages
+*     @note   This will increase load on recieved data handling
+*/
+void enc28j60_enableMulticast (struct enc28j60 *eth);
+
+/**   @brief  Disable reception of mulitcast messages
+*     @note   This will reduce load on recieved data handling
+*/
+void enc28j60_disableMulticast(struct enc28j60 *eth);
+
+#endif
